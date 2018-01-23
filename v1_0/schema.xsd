@@ -1,0 +1,263 @@
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema' elementFormDefault='qualified'>
+
+	<xsd:element name='customers' type='customers' />
+	
+	<xsd:complexType name='customers'>
+		<xsd:sequence>
+			<xsd:element name='customer' type='customer' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name='customer'>
+		<xsd:all>
+			<xsd:element name='customer_id' type='xsd:unsignedInt' minOccurs='0' />
+			<xsd:element name='customer_name' type='type_user_name' minOccurs='1' />
+			<xsd:element name='customer_login_name' type='non-empty-string-max-150-length' minOccurs='0'/>
+			<xsd:element name='customer_languages' type='type_languages' minOccurs='0'/>
+			<xsd:element name='customer_addresses' type='type_contact_addresses' minOccurs='0'/>
+			<xsd:element name='customer_phones' type='type_contact_phones' minOccurs='0' />
+			<xsd:element name='customer_emails' type='type_contact_emails' minOccurs='0' />
+			<xsd:element name='customer_emails_in_newsletter' type='type_contact_emails' minOccurs='0' />
+			<xsd:element name='customer_registration' type='xsd:dateTime' minOccurs='0' />
+			<xsd:element name='customer_last_login' type='xsd:dateTime' minOccurs='0' />
+			<xsd:element name='customer_profile_images' type='type_link_images' minOccurs='0' />
+			<xsd:element name='customer_company' type='type_company_identification' minOccurs='0' />
+			<xsd:element name='customer_other_data' type='type_other_information' minOccurs='0' />
+			<xsd:element name='customer_orders' type='type_customer_orders' minOccurs='0' />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_contact_phones">
+		<xsd:sequence>
+			<xsd:element name='phone' type='type_phone' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_contact_addresses">
+		<xsd:sequence>
+			<xsd:element name='address' type='type_contact_address' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+			
+	<xsd:complexType name="type_contact_emails">
+		<xsd:sequence>
+			<xsd:element name='email' type='type_contact_email' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_link_images">
+		<xsd:sequence>
+			<xsd:element name='image' type='xsd:anyURI' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_languages">
+		<xsd:sequence>
+			<xsd:element name='language' type='language_code' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_other_information">
+		<xsd:sequence>
+			<xsd:element name="basic_data_values" type='type_basic_data_values' minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_customer_orders">
+		<xsd:sequence>
+			<xsd:element name="order" type="type_order"  minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_order_items">
+		<xsd:sequence>
+			<xsd:element name="item" type="type_order_item"  minOccurs='0' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:complexType name="type_basic_data_values">
+		<xsd:sequence>
+			<xsd:element name="data_name" type='non-empty-string-max-150-length' minOccurs='1' maxOccurs='1' />
+			<xsd:element name="data_values" type='xsd:string' minOccurs='1' maxOccurs='unbounded' />
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:complexType name='type_user_name'>
+		<xsd:sequence>
+			<xsd:element name='salutation' type='non-empty-string-max-150-length' minOccurs='0' maxOccurs='1' />
+			<xsd:element name='prefix' type='non-empty-string-max-150-length' minOccurs='0' maxOccurs='20' />
+			<xsd:element name='firstname' type='non-empty-string-max-150-length' minOccurs='0' maxOccurs='1' />
+			<xsd:element name='middlename' type='non-empty-string-max-150-length' minOccurs='0' maxOccurs='1' />
+			<xsd:element name='lastname' type='non-empty-string-max-150-length' minOccurs='1' maxOccurs='1' />
+			<xsd:element name='suffix' type='non-empty-string-max-150-length' minOccurs='0' maxOccurs='20' />
+			<xsd:element name='fullname' type='non-empty-string-max-150-length' minOccurs='1' maxOccurs='1' />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name='type_contact_address'>
+		<xsd:all>
+			<xsd:element name='company' type='type_company_identification' minOccurs='0' />
+			<xsd:element name='contact_name' type='type_user_name' minOccurs='0' />
+			<xsd:element name='contact_phone' type='type_phone' minOccurs='0' />
+			<xsd:element name='contact_email' type='type_contact_email' minOccurs='0' />
+			<xsd:element name='address_type' type='address_type' minOccurs='1' />
+			<xsd:element name='street' type='non-empty-string-max-150-length' minOccurs='1' />
+			<xsd:element name='city' type='non-empty-string-max-150-length' minOccurs='1' />
+			<xsd:element name='region_or_state' type='non-empty-string-max-150-length' minOccurs='0' />
+			<xsd:element name='country_code' type='country_code' minOccurs='1' maxOccurs='1' />
+			<xsd:element name='postal_code' type='non-empty-string-max-10-length' minOccurs='1' />
+		</xsd:all>
+	</xsd:complexType>
+
+	<xsd:complexType name='type_company_identification'>
+		<xsd:all>
+			<xsd:element name='company_id' type='xsd:unsignedInt' minOccurs='0' />
+			<xsd:element name='company_name' type='non-empty-string-max-150-length' minOccurs='1' />
+			<xsd:element name='company_registration_number' type='non-empty-string-max-15-length' minOccurs='0' />
+			<xsd:element name='company_vat_registration_number' type='non-empty-string-max-12-length' minOccurs='0' />
+			<xsd:element name='company_registration_number_for_vat_payer' type='non-empty-string-max-40-length' minOccurs='0' />
+			<xsd:element name='company_addresses' type='type_contact_addresses' minOccurs='0' />
+			<xsd:element name='company_other_data' type='type_other_information' minOccurs='0' />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_order">
+		<xsd:all>
+			<xsd:element name='order_id' type='xsd:unsignedInt' minOccurs='0' />
+			<xsd:element name='variable_symbol' type='non-empty-string-max-10-length' minOccurs='1' />
+			<xsd:element name='constant_symbol' type='non-empty-string-max-4-length' minOccurs='0' />
+			<xsd:element name='specific_symbol' type='non-empty-string-max-150-length' minOccurs='0' />
+			<xsd:element name='order_create_date' type='xsd:dateTime' minOccurs='1' />
+			<xsd:element name='order_payed' type='xsd:boolean' minOccurs='0' />
+			<xsd:element name='order_canceled' type='xsd:boolean' minOccurs='0' />
+			<xsd:element name='order_addresses' type='type_contact_addresses' minOccurs='0' />
+			<xsd:element name='order_items' type='type_order_items' minOccurs='0' />	
+			<xsd:element name='order_other_data' type='type_other_information' minOccurs='0' />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:complexType name="type_order_item">
+		<xsd:all>
+			<xsd:element name='item_type' type='type_order_item_type' minOccurs='1' />
+			<xsd:element name='item_name' type='non-empty-string-max-150-length' minOccurs='1' />
+			<xsd:element name='item_variant' type='non-empty-string-max-150-length' minOccurs='0' />
+			<xsd:element name='item_catalog_number' type='non-empty-string-max-40-length' minOccurs='0' />
+			<xsd:element name='item_ean' type='non-empty-string-max-40-length' minOccurs='0' />
+			<xsd:element name='item_serial_number' type='non-empty-string-max-40-length' minOccurs='0' />
+			<xsd:element name='item_quantity' type='xsd:decimal' minOccurs='1' />
+			<xsd:element name='item_unit' type='non-empty-string-max-15-length' minOccurs='1' />
+			<xsd:element name='item_currency' type='currency_code' minOccurs='0' />
+			<xsd:element name='item_unit_price_without_vat' type='type_price_format' minOccurs='0' />
+			<xsd:element name='item_unit_price_with_vat' type='type_price_format' minOccurs='0' />
+			<xsd:element name='item_total_price_without_vat' type='type_price_format' minOccurs='0' />
+			<xsd:element name='item_total_price_with_vat' type='type_price_format' minOccurs='0' />
+			<xsd:element name='item_price_vat' type='type_price_vat_format' minOccurs='0' />
+			<xsd:element name='item_other_data' type='type_other_information' minOccurs='0' />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<xsd:simpleType name='address_type'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='billing' />
+			<xsd:enumeration value='shipping' />
+			<xsd:enumeration value='contact' />
+			<xsd:enumeration value='other' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="type_order_item_type">
+		<xsd:restriction base='xsd:string'>
+			<xsd:enumeration value='product' />
+			<xsd:enumeration value='service' />
+			<xsd:enumeration value='shipping' />
+			<xsd:enumeration value='payment' />
+			<xsd:enumeration value='discount' />
+			<xsd:enumeration value='other' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='country_code'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='[a-z]{2}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='language_code'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='[a-z]{2}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='currency_code'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='[A-Z]{3}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='type_price_format'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='(-|\+|)[0-9]{1,14}(,|.)[0-9]{8}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='type_price_vat_format'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='[0-9]{1,2}(,|.)[0-9]{2}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-4-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='4' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-10-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='10' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-12-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='12' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-15-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='15' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-40-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='40' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name='non-empty-string-max-150-length'>
+		<xsd:restriction base='xsd:string'>
+			<xsd:minLength value='1' />
+			<xsd:maxLength value='150' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="type_phone">
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value='(\+|00)[0-9]{7,30}' />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="type_contact_email">
+		<xsd:restriction base='xsd:string'>
+			<xsd:pattern value="[^@]+@[^\.]+\..+"/> 
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

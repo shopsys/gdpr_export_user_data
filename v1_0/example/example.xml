@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<customers>
+	<customer>
+		<customer_id>1</customer_id>
+		<customer_login_name>login0123</customer_login_name>
+		<customer_name>
+			<prefix>Mr.</prefix>
+			<prefix>Bc.</prefix>
+			<prefix>Ing.</prefix>
+			<firstname>Jan</firstname>
+			<lastname>Novák</lastname>
+			<suffix>MBA</suffix>
+			<suffix>St.</suffix>
+			<fullname>Mr. Bc. Ing. Jan Novák, MBA St.</fullname>
+		</customer_name>
+		<customer_languages>
+			<language>cs</language>
+			<language>en</language>
+		</customer_languages>
+		<customer_phones>
+			<phone>+420737123456</phone>
+			<phone>+4217688923456</phone>
+		</customer_phones>
+		<customer_addresses>
+			<address>
+				<address_type>billing</address_type>
+				<street>Koksární 1096/10</street>
+				<city>Ostrava</city>
+				<country_code>cz</country_code>
+				<postal_code>70200</postal_code>
+				<contact_phone>+420595177177</contact_phone>
+				<contact_email>info@shopsys.cz</contact_email>
+			</address>
+			<address>
+				<address_type>shipping</address_type>
+				<street>27 Old Gloucester Street</street>
+				<city>London</city>
+				<country_code>gb</country_code>
+				<postal_code>WC1N 3AX</postal_code>
+				<contact_name>
+					<prefix>Mrs.</prefix>
+					<firstname>Jane</firstname>
+					<lastname><![CDATA[Doe's]]></lastname>
+					<fullname><![CDATA[Mrs. Jane Doe's]]></fullname>
+				</contact_name>
+			</address>
+		</customer_addresses>
+		<customer_profile_images>
+			<image>https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png</image>
+			<image>https://cs.wikipedia.org/static/images/project-logos/cswiki.png</image>
+		</customer_profile_images>
+		<customer_company>
+			<company_name>Shopsys s.r.o.</company_name>
+			<company_registration_number>277 90 487</company_registration_number>
+			<company_vat_registration_number>CZ 277 90 487</company_vat_registration_number>
+			<company_addresses>
+				<address>
+					<address_type>billing</address_type>
+					<street>Koksární 1096/10</street>
+					<city>Ostrava</city>
+					<country_code>cz</country_code>
+					<postal_code>70200</postal_code>
+					<contact_phone>+420595177177</contact_phone>
+					<contact_email>info@shopsys.cz</contact_email>
+				</address>
+			</company_addresses>
+		</customer_company>
+		<customer_other_data>
+			<basic_data_values>
+				<data_name>user_moto</data_name>
+				<data_values>Žít a nebo nepít?</data_values>
+				<data_values>jak důležité je míti filipa! nebo je někdo proti? Pokud ano tak si to nechte pro sebe</data_values>
+			</basic_data_values>
+			<basic_data_values>
+				<data_name>pohlaví</data_name>
+				<data_values>muž</data_values>
+			</basic_data_values>
+		</customer_other_data>
+		<orders>
+			
+		</orders>
+	</customer>
+</customers>

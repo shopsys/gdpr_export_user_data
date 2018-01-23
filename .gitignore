@@ -1,0 +1,27 @@
+# projektovy adresar NetBeans
+nbproject/*
+.idea/*
+
+# Globálně ignorované přípony
+lockfile
+*.log
+*.tmp
+*.bak
+*.bck
+*.bup
+
+# Soubory generované operačním systémem
+[Tt]humbs.db
+*.DS_Store
+
+# ShopSys
+/sitemap_*.xml.gz
+/deploy.ini
+
+!.placeholder
+!/**/.placeholder
+!/**/**/.placeholder
+!/**/**/**/.placeholder
+!/**/**/**/**/.placeholder
+!/**/**/**/**/**/.placeholder
+!/**/**/**/**/**/**/.placeholder
