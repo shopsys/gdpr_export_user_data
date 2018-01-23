@@ -1,4 +1,4 @@
-# Export uživatelských dat do strojově čitelného formátu.
+# APEK - Export uživatelských dat do strojově čitelného formátu.
 
 Tento export vznikl jako reakce na směrnici General Data Protection Regulation (EP 2016/679).
 Jedná se o export všech uživatelských dat, dle práva na export.
