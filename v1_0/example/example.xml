@@ -52,7 +52,7 @@
 		<customer_company>
 			<company_name>Shopsys s.r.o.</company_name>
 			<company_registration_number>277 90 487</company_registration_number>
-			<company_vat_registration_number>CZ 277 90 487</company_vat_registration_number>
+			<company_vat_registration_number>CZ27790487</company_vat_registration_number>
 			<company_addresses>
 				<address>
 					<address_type>billing</address_type>
@@ -76,8 +76,71 @@
 				<data_values>muž</data_values>
 			</basic_data_values>
 		</customer_other_data>
-		<orders>
-			
-		</orders>
+		<customer_orders>
+                    <order>
+                        <order_id>132456789</order_id>
+                        <variable_symbol>AB98765432</variable_symbol>
+                        <order_create_date>2017-10-19T12:39:13-05:00</order_create_date>
+                        <order_payed>1</order_payed>
+                        <order_addresses>
+                            <address>
+                                <company>
+                                    <company_id>888888</company_id>
+                                    <company_name>Kladiva a kovadliny s.r.o.</company_name>
+                                    <company_registration_number>12345678</company_registration_number>
+                                </company>
+                                <contact_name>
+                                    <prefix>pan</prefix>
+                                    <firstname>Jan</firstname>
+                                    <lastname><![CDATA[Novák]]></lastname>
+                                    <fullname><![CDATA[pan Jan Novák]]></fullname>
+                                </contact_name>
+                                <contact_phone>+420789456132</contact_phone>
+                                <contact_email>jan.novak@kladivakovadliny.eu</contact_email>
+                                <address_type>billing</address_type>
+                                <street>Kolomazná 12</street>
+                                <city>Šroubov nad Maticí</city>
+                                <postal_code>12345</postal_code>
+                                <country_code>cz</country_code>
+                            </address>
+                            <address>
+                                <contact_name>
+                                    <prefix>pan</prefix>
+                                    <firstname>Jan</firstname>
+                                    <lastname><![CDATA[Novák]]></lastname>
+                                    <fullname><![CDATA[pan Jan Novák]]></fullname>
+                                </contact_name>
+                                <contact_phone>+420879654321</contact_phone>
+                                <contact_email>honza@novakovic.eu</contact_email>
+                                <address_type>shipping</address_type>
+                                <street>Vedlejší 55</street>
+                                <city>Šroubov pod Maticí</city>
+                                <postal_code>12354</postal_code>
+                                <country_code>cz</country_code>
+                            </address>
+                        </order_addresses>
+                        <order_items>
+                            <item>
+                                <item_type>product</item_type>
+                                <item_name>Rotační buchar</item_name>
+                                <item_catalog_number>RB2254S</item_catalog_number>
+                                <item_unit>ks</item_unit>
+                                <item_quantity>1</item_quantity>
+                            </item>
+                            <item>
+                                <item_type>shipping</item_type>
+                                <item_name>Osobní odběr</item_name>
+                                <item_unit>ks</item_unit>
+                                <item_quantity>1</item_quantity>
+                            </item>
+                            <item>
+                                <item_type>payment</item_type>
+                                <item_name>Bitcoin</item_name>
+                                <item_unit>ks</item_unit>
+                                <item_quantity>1</item_quantity>
+                            </item>
+                        </order_items>
+                    </order>
+		</customer_orders>
 	</customer>
 </customers>
