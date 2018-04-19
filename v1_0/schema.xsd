@@ -128,7 +128,7 @@
 			<xsd:element name='constant_symbol' type='non-empty-string-max-4-length' minOccurs='0' />
 			<xsd:element name='specific_symbol' type='non-empty-string-max-150-length' minOccurs='0' />
 			<xsd:element name='order_create_date' type='xsd:dateTime' minOccurs='1' />
-			<xsd:element name='order_payed' type='xsd:boolean' minOccurs='0' />
+			<xsd:element name='order_paid' type='xsd:boolean' minOccurs='0' />
 			<xsd:element name='order_canceled' type='xsd:boolean' minOccurs='0' />
 			<xsd:element name='order_addresses' type='type_contact_addresses' minOccurs='0' />
 			<xsd:element name='order_items' type='type_order_items' minOccurs='0' />	
