@@ -37,7 +37,7 @@
 - **Tento podelement je povinný**.
 - Element musí být použit jen jednou.
 
-#### Element: order_payed
+#### Element: order_paid
 - Jedná se o datový typ [boolean](https://www.w3.org/TR/xmlschema-2/#boolean)
 - Jedná se o informaci zda bylo zaplaceno. 1 pro zaplaceno. 0 pro ještě nezaplaceno.
 - Tento podelement je nepovinný.

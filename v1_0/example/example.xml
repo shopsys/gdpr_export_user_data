@@ -81,7 +81,7 @@
                         <order_id>132456789</order_id>
                         <variable_symbol>AB98765432</variable_symbol>
                         <order_create_date>2017-10-19T12:39:13-05:00</order_create_date>
-                        <order_payed>1</order_payed>
+                        <order_paid>1</order_paid>
                         <order_addresses>
                             <address>
                                 <company>
